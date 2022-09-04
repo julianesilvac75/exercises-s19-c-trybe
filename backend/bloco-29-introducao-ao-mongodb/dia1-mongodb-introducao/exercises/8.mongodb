@@ -1,0 +1,4 @@
+// Conte quantos livros existem com o status = "PUBLISH".
+
+use('trybe');
+db.books.countDocuments({ status: "PUBLISH" });
