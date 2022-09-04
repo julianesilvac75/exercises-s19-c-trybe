@@ -1,0 +1,4 @@
+// Retorne a quantidade de documentos da coleção books.
+
+use('trybe');
+db.books.countDocuments();
