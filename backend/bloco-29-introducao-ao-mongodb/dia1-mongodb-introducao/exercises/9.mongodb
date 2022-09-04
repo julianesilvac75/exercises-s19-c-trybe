@@ -1,0 +1,4 @@
+// Exiba os atributos title, isbn e pageCount dos 3 primeiros livros. NÃO retorne o atributo _id.
+
+use('trybe');
+db.books.find({}, { _id: 0, publishedDate: 0, thumbnailUrl: 0, shortDescription: 0, longDescription: 0, status: 0, authors: 0, categories: 0 }).limit(3);
