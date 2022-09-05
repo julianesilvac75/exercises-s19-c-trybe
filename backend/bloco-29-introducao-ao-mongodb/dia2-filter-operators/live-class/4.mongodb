@@ -1,0 +1,14 @@
+use('aula-filter-operators');
+// db.filmes.find({
+//   $and: [
+//     { ano: 2014 },
+//     { "avaliacao.ruim": {
+//       $nin: [{ $gte: 5, $lte: 10}]
+//     }}
+//   ]
+// })
+
+db.filmes.find({
+  ano: 2014,
+  'avaliacao.ruim': { $not: { $gte: 5, $lte: 10 } }
+});

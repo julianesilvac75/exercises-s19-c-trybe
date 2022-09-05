@@ -1,0 +1,8 @@
+use('aula-filter-operators');
+
+db.filmes.find({
+  $or: [
+    { diretor: 'Quentin Tarantino' },
+    { "avaliacao.bom": { $gte: 5, $lte: 10 } }
+  ]
+});

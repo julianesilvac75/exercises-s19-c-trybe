@@ -1,0 +1,4 @@
+// Remova todos os restaurantes que possuem culinária do tipo American.
+
+use('business');
+db.restaurants.deleteMany({ cuisine: 'American' });

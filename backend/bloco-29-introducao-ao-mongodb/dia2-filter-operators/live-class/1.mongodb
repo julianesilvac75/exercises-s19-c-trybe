@@ -1,0 +1,11 @@
+use('aula-filter-operators');
+db.filmes.find({},
+  {
+    "avaliacao.ruim": false,
+    "avaliacao.medio": false
+  }).sort({
+    "diretor": 1,
+    "titulo": 1,
+    "ano": -1,
+    "avaliacao.bom": -1
+  });

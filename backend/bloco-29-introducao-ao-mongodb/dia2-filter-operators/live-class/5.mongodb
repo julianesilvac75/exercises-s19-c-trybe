@@ -1,0 +1,4 @@
+use('aula-filter-operators');
+db.filmes.find({
+  ano: { $in: [2001, 1968, 1995] }
+})

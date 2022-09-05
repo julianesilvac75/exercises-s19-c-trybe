@@ -1,0 +1,3 @@
+// Selecione e faça a contagem dos restaurantes que não possuem avaliação menor ou igual a 5, essa consulta também deve retornar restaurantes que não possuem o campo de avaliação.
+use('business');
+db.restaurants.countDocuments({ rating: { $not: { $lte: 5 } } });
