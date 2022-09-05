@@ -1,0 +1,4 @@
+use('aula-filter-operators');
+db.filmes.find({
+  ano: { $nin: [2013, 2008] }
+});
