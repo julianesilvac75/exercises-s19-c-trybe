@@ -1,0 +1,6 @@
+// Retorne o total de super-heróis com cabelos pretos ou carecas ("No Hair").
+
+use('class');
+db.superheroes.countDocuments(
+  { 'aspects.hairColor': { $in: ['Black', 'No Hair'] } }
+);
