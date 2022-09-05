@@ -1,0 +1,6 @@
+// Selecione e faça a contagem dos restaurantes em que a avaliação seja maior ou igual a 6, ou restaurantes localizados no bairro Brooklyn.
+use('business');
+db.restaurants.countDocuments({ $or: [
+  { rating: { $gte: 6 } },
+  { borough: 'Brooklyn' },
+]});
