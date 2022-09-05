@@ -1,0 +1,6 @@
+// Retorne o total de super-heróis com olhos azuis.
+
+use('class');
+db.superheroes.countDocuments(
+  { 'aspects.eyeColor': 'blue' }
+);
