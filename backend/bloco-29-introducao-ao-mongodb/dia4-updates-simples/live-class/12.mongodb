@@ -1,0 +1,10 @@
+// Utilizando uma única operação, remova os campos budget e estimatedBudget em todos os documentos.
+
+use('class2');
+db.movies.find();
+db.movies.updateMany({}, {
+    $unset: {
+        budget: '',
+        estimatedBudget: ''
+    }
+});
