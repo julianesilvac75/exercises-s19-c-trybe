@@ -1,0 +1,10 @@
+// Altere o imdbRating para 7.7 no filme Batman. 
+use('class2');
+db.movies.find();
+db.movies.updateOne({
+    title: 'Batman'
+}, {
+    $set: {
+        imdbRating: 7.7
+    }
+});
