@@ -1,13 +1,15 @@
-//  Para os filmes Batman ou Home Alone, atribua a imdbRating o valor 17 caso o valor de imdbRating seja menor que 17.
-
+// Utilize o operador $max para alterar o imdbRating para 8.6 do filme Godzilla. Além disso, altere a categoria "adventure" para "thriller" do filme Godzilla.
 use('class2');
-db.movies.find();
-db.movies.updateMany({
-    title: {
-        $in: ['Batman', 'Home Alone']
-    }
+db.movies.findOne({
+    title: 'Godzilla'
+});
+db.movies.updateOne({
+    title: 'Godzilla'
 }, {
     $max: {
-        imdbRating: 17
+        imdbRating: 8.6
+    },
+    $set: {
+        'category.1': 'thriller'
     }
 });

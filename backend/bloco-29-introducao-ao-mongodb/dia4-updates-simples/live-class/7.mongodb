@@ -1,15 +1,12 @@
-// Utilize o operador $max para alterar o imdbRating para 8.6 do filme Godzilla. Além disso, altere a categoria "adventure" para "thriller" do filme Godzilla.
+// Renomeie o campo budget para estimatedBudget do filme Batman
 use('class2');
 db.movies.findOne({
-    title: 'Godzilla'
+    title: 'Batman'
 });
 db.movies.updateOne({
-    title: 'Godzilla'
+    title: 'Batman'
 }, {
-    $max: {
-        imdbRating: 8.6
-    },
-    $set: {
-        'category.1': 'thriller'
+    $rename: {
+        budget: 'estimatedBudget'
     }
 });

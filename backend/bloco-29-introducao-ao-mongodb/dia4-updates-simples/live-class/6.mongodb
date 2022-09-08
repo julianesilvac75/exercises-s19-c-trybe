@@ -1,13 +1,12 @@
-// Utilize o operador $min para alterar o budget para 5 do filme Home Alone
-
+// Multiplique por 4 o imdbRating do filme Batman.
 use('class2');
 db.movies.findOne({
-    title: 'Home Alone'
+    title: 'Batman'
 });
 db.movies.updateOne({
-    title: 'Home Alone'
+    title: 'Batman'
 }, {
-    $min: {
-        budget: 5
+    $mul: {
+        imdbRating: 4
     }
 });

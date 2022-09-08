@@ -1,12 +1,13 @@
-// Aumente em 2 o imdbRating do filme Batman.
+// Altere budget para 15 e imdbRating para 5.5 no filme Home Alone.
 use('class2');
 db.movies.findOne({
-    title: 'Batman'
+    title: 'Home Alone'
 });
 db.movies.updateOne({
-    title: 'Batman'
+    title: 'Home Alone'
 }, {
-    $inc: {
-        imdbRating: 2
+    $set: {
+        budget: 15,
+        imdbRating: 5.5
     }
 });

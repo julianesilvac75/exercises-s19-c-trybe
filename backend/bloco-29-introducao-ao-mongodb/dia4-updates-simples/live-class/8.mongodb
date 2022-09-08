@@ -1,9 +1,13 @@
-// Utilizando uma única operação, crie um campo chamado sequels e atribua a ele o valor 0 em todos os documentos.
+// Utilize o operador $min para alterar o budget para 5 do filme Home Alone
 
 use('class2');
-db.movies.find();
-db.movies.updateMany({}, {
-    $set: {
-        sequels: 0
+db.movies.findOne({
+    title: 'Home Alone'
+});
+db.movies.updateOne({
+    title: 'Home Alone'
+}, {
+    $min: {
+        budget: 5
     }
 });
