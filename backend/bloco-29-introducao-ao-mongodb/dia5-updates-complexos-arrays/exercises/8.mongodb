@@ -1,0 +1,23 @@
+// Crie um array de documentos chamado cast para o filme Home Alone com os seguintes dados:
+
+const cast = [{
+  "actor": "Macaulay Culkin",
+  "character": "Kevin"
+},
+{
+  "actor": "Joe Pesci",
+  "character": "Harry"
+},
+{
+  "actor": "Daniel Stern"
+}];
+
+use('cinema');
+db.movies.findOne({
+    title: 'Home Alone'
+});
+db.movies.updateOne({
+    title: 'Home Alone'
+}, {
+    $set: { cast }
+});
