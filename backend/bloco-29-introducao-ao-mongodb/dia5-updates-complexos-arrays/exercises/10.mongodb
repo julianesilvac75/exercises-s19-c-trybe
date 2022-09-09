@@ -1,0 +1,21 @@
+// Crie um array de documentos chamado cast para o filme Batman com os seguintes dados:
+
+const cast = [{
+  "character": "Batman"
+},
+{
+  "character": "Alfred"
+},
+{
+  "character": "Coringa"
+}];
+
+use('cinema');
+db.movies.findOne({
+    title: 'Batman'
+});
+db.movies.updateOne({
+    title: 'Batman'
+}, {
+    $set: { cast }
+});
