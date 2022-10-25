@@ -1,0 +1,8 @@
+nome idade
+Maria 45
+Miguel 33
+Tulio 23
+Alberto 35
+Betina 23
+Joao 42
+Victor 19
