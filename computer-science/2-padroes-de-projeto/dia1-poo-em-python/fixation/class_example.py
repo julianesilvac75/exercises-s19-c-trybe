@@ -31,7 +31,7 @@ class liquidificador:
 
 liquidificador_vermelho = liquidificador('Vermelho', 250, 220, 100)
 liquidificador_vermelho.ligar(1)
-print("Esta ligado?", liquidificador_vermelho.esta_ligado())
+print("Esta ligado?", liquidificador_vermelho.esta_ligado()) 
 
 liquidificador_vermelho.desligar()
 
