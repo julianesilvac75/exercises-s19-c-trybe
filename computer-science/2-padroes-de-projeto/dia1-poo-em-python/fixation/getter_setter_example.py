@@ -20,6 +20,13 @@ class Liquidificador:
         self.__cor = nova_cor
 
 
+    def __str__(self):
+        return f"""
+        - Cor: {self.__cor}
+        - Preco: {self.preco}
+        """
+
+
 liquidificador = Liquidificador("Azul", "110", "127", "200")
 
 # print(f"A cor atual do liquidificador eh {liquidificador.__cor}")
