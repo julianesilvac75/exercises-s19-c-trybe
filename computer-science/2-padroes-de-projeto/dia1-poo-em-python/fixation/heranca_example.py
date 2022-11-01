@@ -23,6 +23,12 @@ class Eletrodomestico:
     def esta_ligado(self):
         return self.__ligado
 
+    def __str__(self) -> str:
+        return f"""
+            Preco: {self.preco}
+            Cor do produto: {self.cor}
+        """
+
     # Getter
 
     @property
