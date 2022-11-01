@@ -1,26 +1,29 @@
-class Grafico:
+from interface_example import Grafico
+
+
+class GraficoBarras(Grafico):
     def __init__(self, dados):
         self.dados = dados
 
-    def desenhar(self, tipo_de_grafico):
-        if tipo_de_grafico == "GraficoBarras":
-            self.__desenhar_grafico_barras()
-
-        if tipo_de_grafico == "GraficoRadar":
-            self.__desenhar_grafico_radar()
-
-        if tipo_de_grafico == "GraficoPizza":
-            self.__desenhar_grafico_pizza()
-
-    def __desenhar_grafico_barras(self):
+    def desenhar(self):
         print("Logica para grafico de barras")
 
-    def __desenhar_grafico_radar(self):
+
+class GraficoRadar(Grafico):
+    def __init__(self, dados):
+        self.dados = dados
+
+    def desenhar(self):
         print("Logica para grafico radar")
 
-    def __desenhar_grafico_pizza(self):
-        print("Logica para grafico pizza")
+
+class GraficoPizza(Grafico):
+    def __init__(self, dados):
+        self.dados = dados
+
+    def desenhar(self):
+        print("Logica para grafico de pizza")
 
 
-grafico_1 = Grafico([1, 2])
-grafico_1.desenhar("GraficoRadar")
+grafico_1 = GraficoRadar([1, 2])
+grafico_1.desenhar()
