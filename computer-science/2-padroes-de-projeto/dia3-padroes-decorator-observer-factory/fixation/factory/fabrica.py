@@ -13,7 +13,7 @@ class Combo(ABC):
         pass
 
     def exibe_itens(self):
-        self.itens
+        return self.itens
 
     def adicionar_itens(self, item):
         self.itens.append(item)
