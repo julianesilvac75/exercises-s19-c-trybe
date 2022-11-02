@@ -1,4 +1,5 @@
 from struct import calcsize
+from unicodedata import numeric
 
 
 class Calculadora:
@@ -26,6 +27,25 @@ class CalculadoraDecorada:
         )
 
 
+class DecoratedCalculator:
+    def __init__(self, calculator):
+        self.calculator = calculator
+
+    def convert_numer(self, number):
+        if not isinstance(number, str):
+            return number
+
+        return {
+            "one": 1, "two": 2, "three": 3, "four": 4, "five": 5,
+            "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10
+        }.get(number)
+
+    def soma(self, x, y):
+        return self.calculator.soma(
+            self.convert_numer(x), self.convert_numer(y)
+        )
+        
+
 if __name__ == "__main__":
     calculadora = Calculadora()
     print("10 + 20 =", calculadora.soma(10, 20))
@@ -33,3 +53,6 @@ if __name__ == "__main__":
     calculadora_decorada = CalculadoraDecorada(calculadora)
     print("'oito' + 'dois' =", calculadora_decorada.soma("oito", "dois"))
     print("'sete' + 'dez' =", calculadora_decorada.soma("sete", "dez"))
+
+    decorated_calculator = DecoratedCalculator(calculadora)
+    print("'nine' + 'three' =", decorated_calculator.soma("nine", "three"))
