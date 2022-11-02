@@ -1,9 +1,9 @@
-from fabrica import ComboFeliz, ComboGelado, ComboTudo
+from fabrica import ComboFeliz, ComboGelado, ComboTudo, ComboFritas
 
 
 if __name__ == "__main__":
     combo_escolhido = input(
-        "Ola, qual seu pedido? [ComboTudo, ComboFeliz, ComboGelado]:"
+        "Ola, qual seu pedido? [ComboTudo, ComboFeliz, ComboGelado, ComboFritas]:"
     )
 
     #Para transformar uma string em código executável basta usar o método eval()

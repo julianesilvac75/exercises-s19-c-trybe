@@ -39,3 +39,8 @@ class ComboGelado(Combo):
         self.adicionar_itens(ItemHamburger())
         self.adicionar_itens(ItemSorvete())
         
+
+class ComboFritas(Combo):
+    def criar_combo(self):
+        self.adicionar_itens(ItemHamburger())
+        self.adicionar_itens(ItemFritas())
