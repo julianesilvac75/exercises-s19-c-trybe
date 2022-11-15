@@ -9,19 +9,27 @@ client = MongoClient()
 #create "catalogue" database if doesnt exist:
 db = client.catalogue
 
-documents = [
-    {
-        "title": "A Light in the Attic",
-    },
-    {
-        "title": "Tipping the Velvet",
-    },
-    {
-        "title": "Soumission",
-    },
-]
+#search for a document in a colection (without filters):
+print(db.books.find_one())
 
-db.books.insert_many(documents)
+#search with filters:
+for book in db.books.find({"title": {"$regex": "t"}}):
+    print(book["title"])
+
+
+# documents = [
+#     {
+#         "title": "A Light in the Attic",
+#     },
+#     {
+#         "title": "Tipping the Velvet",
+#     },
+#     {
+#         "title": "Soumission",
+#     },
+# ]
+
+# db.books.insert_many(documents)
 
 #"book" represents data got by crawling:
 # book = {
