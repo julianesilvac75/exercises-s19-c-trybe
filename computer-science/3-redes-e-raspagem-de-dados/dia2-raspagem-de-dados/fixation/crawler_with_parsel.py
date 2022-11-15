@@ -1,17 +1,36 @@
 import requests
 from parsel import Selector
 
-URL = "http://books.toscrape.com/"
 
-response = requests.get(URL)
-selector = Selector(text=response.text)
-thumbnail_url_selector = "div.image_container a::attr(href)"
+URL_BASE = "http://books.toscrape.com/catalogue/"
+next_page_url = "page-1.html"
 
-for url in selector.css(thumbnail_url_selector).getall():
-    thumbnail_request = requests.get(URL + url)
-    thumbnail_selector = Selector(text=thumbnail_request.text)
-    book_title = thumbnail_selector.css("div.product_main h1")
-    print(book_title.get())
+while next_page_url:
+    response = requests.get(URL_BASE + next_page_url)
+    selector = Selector(text=response.text)
+
+    for product in selector.css(".product_pod"):
+        title = product.css("h3 a::attr(title)").get()
+        price = product.css(".price_color::text").get()
+        print(title, price)
+
+    next_page_url = selector.css(".next a::attr(href)").get()
+
+# URL = "http://books.toscrape.com/"
+
+# response = requests.get(URL)
+# selector = Selector(text=response.text)
+# thumbnail_url_selector = "div.image_container a::attr(href)"
+
+# for url in selector.css(thumbnail_url_selector).getall():
+#     thumbnail_request = requests.get(URL + url)
+#     thumbnail_selector = Selector(text=thumbnail_request.text)
+#     book_title = thumbnail_selector.css("div.product_main h1")
+#     # print(book_title.get())
+
+
+# next_page_url = selector.css(".next a::attr(href)").get()
+# print(next_page_url)
 
 # for thumbnail in selector.css("img.thumbnail").getall():
 #     print(thumbnail)
