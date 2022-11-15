@@ -10,8 +10,14 @@ selector = Selector(text=response.text)
 
 #getting href attribute from first element of the selector:
 href = selector.css(".product_pod h3 a::attr(href)").get()
-print(href)
+detail_page_url = URL_BASE + href
 
 
-#complete url:
-print(URL_BASE + href)
+#get detail page content:
+detail_response = requests.get(detail_page_url)
+detail_selector = Selector(text=detail_response.text)
+
+#get product description:
+# ~ is sibling tag
+description = detail_selector.css("#product_description ~ p::text").get()
+print(description)
