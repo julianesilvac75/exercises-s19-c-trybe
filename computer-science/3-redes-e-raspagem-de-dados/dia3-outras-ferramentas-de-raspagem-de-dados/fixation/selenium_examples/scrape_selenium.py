@@ -7,10 +7,10 @@ from selenium.webdriver.firefox.options import Options
 
 firefox = webdriver.Firefox()
 
-options = Options()
-options.add_argument('--headless')
+# options = Options()
+# options.add_argument('--headless')
 
-firefox = webdriver.Firefox(options=options)
+# firefox = webdriver.Firefox(options=options)
 
 # firefox.get("https://books.toscrape.com/")
 
