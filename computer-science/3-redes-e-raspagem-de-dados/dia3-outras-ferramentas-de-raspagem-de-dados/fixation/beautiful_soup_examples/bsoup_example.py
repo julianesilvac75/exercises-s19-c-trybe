@@ -16,16 +16,23 @@ title = soup.title
 print(title)
 
 # o tipo de "title" eh tag
-print(type(title))
+# print(type(title))
 
 # o nome de "title" eh title
-print(title.name)
+# print(title.name)
+
+# acessando a string de uma tag
+print(title.string)
+
+# verificando o tipo dessa string
+print(type(title.string))
 
 # acessando a tag "footer"
 footer = soup.footer
 
 # acessando o atributo classe da tag footer
-print(footer['class'])
+# print(footer['class'])
+
 
 # Utiliza o método prettify para melhorar a visualização do conteúdo
 # print(soup.prettify())
