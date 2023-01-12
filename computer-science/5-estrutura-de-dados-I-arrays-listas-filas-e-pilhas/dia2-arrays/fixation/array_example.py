@@ -1,3 +1,5 @@
+import sys
+
 """Perceba que temos uma coleção de valores
 e operações que atuam sobre estes valores,
 de acordo com o que foi definido pelo TAD."""
@@ -27,10 +29,32 @@ class ListaArray:
 
 # vamos inicializar e preencher uma estrutura de dados array
 array = ListaArray()
+
+# sys.getsizeof retorna o tamanho da lista em bytes
+array_memory_size = sys.getsizeof(array.data)
+print(array_memory_size)
+
 array.set(0, "Felipe")
 array.set(1, "Ana")
+
+# quando começamos as inserções o valor muda
+array_memory_size = sys.getsizeof(array.data)
+print(array_memory_size)  # 56
+
 array.set(2, "Shirley")
 array.set(3, "Miguel")
+
+# como um espaço adicional é reservado o valor não é modificado
+array_memory_size = sys.getsizeof(array.data)
+print(array_memory_size) # 88
+
+array.set(4, "Alberto")
+array.set(5, "Marta")
+array.set(6, "Túlio")
+array.set(7, "Michelle")
+
+array_memory_size = sys.getsizeof(array.data)
+print(array_memory_size) # 120
 
 # para acessar um elemento do array, utilizamos seu índice
 print(array.get(0))  # saída: Felipe
